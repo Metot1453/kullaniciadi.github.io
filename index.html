@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sayfasi</title>
 </head>
 <body>
-  <h2>Raspberry Pi</h2> <h1></h1>
-  <a href="https://www.raspberrypi.com">Open</a>
-  <h2>Fandom</h2>
-  <a href="https://www.fandom.com">Open</a>
-  <h3>Blender</h3>
-  <a href="https://www.blender.org">Open</a>
-  <h1><li>GitHub</li></h1>
-  <a href="https://github.com">Open</a>
-  <h1><li>Visual Studio Code</li></h1>
-  <a href="https://code.visualstudio.com/">Open</a>
+    <p>Oyunun amacı:papsı yakala!</p>
+    <img src="Papyrus.webp" alt="Papyrus" height="80px" width="40px"
+/>
+<img src="turningarrow.JPG" alt="arrow" height="100px" width="100px"
+/>
+<div style="text-align: center; border: 2px solid #333; padding: 30px; border-radius: 100px;">
+    <h1>Papyrus'u Yakala!</h1>
+    <p>Skorun: <span id="skor">0</span></p>
+    
+    <img src="Papyrus.webp" 
+         id="hedef" 
+         alt="Papyrus" 
+         style="cursor: pointer; transition: 1s;" 
+         width="50px" 
+         onclick="skorArtir()">
+</div>
+
+<script>
+    let skor = 0;
+    function skorArtir() {
+        skor = skor + 1;
+        document.getElementById("skor").innerHTML = skor;
+        
+        let x = Math.random() * 800;
+        let y = Math.random() * 500;
+        document.getElementById("hedef").style.transform = `translate(${x}px, ${y}px)`;
+    }
+</script>
 </body>
 </html>
